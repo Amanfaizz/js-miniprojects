@@ -1,8 +1,8 @@
-        const score ={
-            wins : 0,
-            loss :0,
-            tie : 0 
-        }
+        const score = JSON.parse(localStorage.getItem('score')) || 
+        {wins : 0,
+        loss : 0,
+        tie: 0}
+    
         
         
         
@@ -75,6 +75,8 @@
                 score.tie ++;
             }
 
+            localStorage.setItem('score',JSON.stringify(score));
+
            
                 alert(`you chose: ${playerMove}. Computer chose ${computerMove} , result ${result}`)
 
@@ -89,6 +91,7 @@
            score.wins = 0;
            score.loss = 0;
            score.tie = 0;
+           localStorage.setItem('score',JSON.stringify(score));
 
            console.log(score);
 
