@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 80vh;
+
+}
+
+.btn{
+    border-radius: 50px;
+    gap: 30px;
+    font-size: 25px;
+    background-color: gray;
+    padding: 25px;
+
+}
