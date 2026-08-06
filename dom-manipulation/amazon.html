@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+</head>
+<body>
+
+    <h1>Learning DOM Manipulation</h1>
+    
+    <p>Amazon Shopping Calculator</p>
+    <input placeholder="Enter The Cost" onkeydown="
+    enterBtn(event);
+    "
+    class="js-cost">
+    <button onclick="calcvalue();">Calculate</button>
+    <p class="js-result"></p>
+
+<script>
+
+    function enterBtn(event){
+         console.log(event.key)
+    if(event.key === 'Enter'){
+        calcvalue();}
+    }
+    function calcvalue(){
+    const inputElement = document.querySelector('.js-cost');
+    let cost = Number(inputElement.value);
+    if(cost<40){
+        cost +=10;
+    }
+    console.log(cost);
+
+    document.querySelector(".js-result")
+    .innerHTML = `Final Cost : $${cost}`
+    }
+    
+</script>
+</body>
+</html>
