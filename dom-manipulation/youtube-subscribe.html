@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Subscribe Button</title>
+    <style>
+        .yt-btn{
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .is-subscribed{
+            background-color: gray;
+            color: black;}
+        
+    </style>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="
+    let Sub = document.querySelector('.yt-btn');
+   if(Sub.innerText==='Subscribe'){
+    Sub.innerHTML='Subscribed';
+    Sub.classList.add('is-subscribed');
+}
+    else{
+    Sub.innerHTML = 'Subscribe'
+    Sub.classList.remove('is-subscribed');
+    }
+    
+    "
+    class="yt-btn">Subscribe</button>
+    <script></script>
+</body>
+</html>
