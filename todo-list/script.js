@@ -1,4 +1,6 @@
-  let arr =['do dsa','study js'];
+  let arr =[
+    
+  ];
 
   renderlist();
 
@@ -6,8 +8,19 @@ function renderlist() {
   let todolist = ''
 
  for(let i =0;i<arr.length;i++){
-    const todo = arr[i];
-    const html =`<p>${todo}</p>`;
+    const todoObject = arr[i];
+    const name =todoObject.name;
+    const dueDate = todoObject.dueDate;
+    const html =`
+    <div>
+    ${name}
+    </div> <div>${dueDate}</div>
+      <button onclick ="
+      arr.splice(${i},1);
+      renderlist();
+      " class ='del-btn'>
+      Delete
+      </button>`;
     todolist += html;
          }
 
@@ -16,10 +29,14 @@ item.innerHTML = todolist;
         };
 function listinput(){
     const box = document.querySelector('.todo-input');
-    const boxinput = box.value;
-        arr.push(boxinput);
-         console.log(arr);
+    const name = box.value;
+
+
+    const dateInputElement = document.querySelector('.js-date-select');
+    const dueDate = dateInputElement.value;
+        arr.push({name,dueDate});
          box.value='';
+         dueDate.value=''
          renderlist();
 }
         
