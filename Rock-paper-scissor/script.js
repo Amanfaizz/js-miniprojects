@@ -109,3 +109,22 @@ function reset() {
 
 }
 
+let isautoPlaying = false;
+let intervalID;
+function autoPlay(){ 
+    if(!isautoPlaying){
+   intervalID = setInterval(function(){
+    const playMove = computersMove();
+    playGame(playMove);
+    },1000);
+    isautoPlaying = true;
+}
+
+
+else
+    {
+     clearInterval(intervalID);
+    isautoPlaying = false;
+   
+}
+}

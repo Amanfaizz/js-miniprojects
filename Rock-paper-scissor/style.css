@@ -26,8 +26,10 @@ body{
     cursor: pointer;
 }
 
-.btn{
+.btn , .auto-play{
     padding: 8px 12px;
     border-radius: none;
     cursor: pointer;
 }
+
+
