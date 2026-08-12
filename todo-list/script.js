@@ -4,6 +4,15 @@
 
   renderlist();
 
+
+
+
+document.querySelector('.add-btn')
+.addEventListener('click', () =>{
+   listinput();
+})
+
+
 function renderlist() {
   let todolist = ''
 arr.forEach(function(todoObject , index){
@@ -13,16 +22,21 @@ arr.forEach(function(todoObject , index){
     <div>
     ${name}
     </div> <div>${dueDate}</div>
-      <button onclick ="
-      arr.splice(${index},1);
-      renderlist();
-      " class ='del-btn'>
+      <button class ='del-btn'>
       Delete
       </button>`;
-    todolist += html;
+    todolist += html;  
 })
     const item = document.querySelector('.items');
 item.innerHTML = todolist;
+
+  document.querySelectorAll('.del-btn')
+    .forEach((deleteButton , index) => {
+      deleteButton.addEventListener('click', ()=>{
+        arr.splice(index,1);
+      renderlist();
+      })
+    })
         };
 function listinput(){
     const box = document.querySelector('.todo-input');
