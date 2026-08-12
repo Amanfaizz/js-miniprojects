@@ -8,7 +8,34 @@ const score = JSON.parse(localStorage.getItem('score')) ||
 
 updateScore();
 
+document.querySelector('.rock-btn')
+.addEventListener('click', ()=>{
+  playGame('Rock');
+})
 
+
+document.querySelector('.paper-btn')
+.addEventListener('click', ()=>{
+  playGame('Paper');
+})
+
+
+document.querySelector('.scissor-btn')
+.addEventListener('click', ()=>{
+  playGame('Scissor');
+})
+
+document.body.addEventListener('keydown', (event) => {
+if((event.key)==='r'){
+    playGame('Rock');
+}
+else if((event.key)==='p'){
+    playGame('Paper');
+}
+else if((event.key)==='s'){
+    playGame('Scissor');
+}
+})
 
 
 function computersMove() {
